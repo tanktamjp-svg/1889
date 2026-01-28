@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shikoku 1889 - Digital Rulebook</title>
+    <style>
+        :root {
+            --bg-cream: #fdfcf0;
+            --teal-dark: #004b50;
+            --teal-light: #e0f2f1;
+            --accent-red: #a83232;
+            --text-dark: #333;
+            --border-gold: #c5a059;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--teal-dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 5px solid var(--border-gold);
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        nav a {
+            color: var(--teal-dark);
+            text-decoration: none;
+            margin-right: 1.5rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-red);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--teal-dark);
+            border-bottom: 2px solid var(--teal-light);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--accent-red);
+        }
+
+        .image-placeholder {
+            background: #eee;
+            border: 2px dashed #ccc;
+            padding: 2rem;
+            text-align: center;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--teal-dark);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--teal-light);
+        }
+
+        .glossary-item {
+            margin-bottom: 1rem;
+        }
+
+        .glossary-term {
+            font-weight: bold;
+            color: var(--teal-dark);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SHIKOKU 1889</h1>
+    <p>A Game of Investment and Railroad Operation in Meiji-era Japan</p>
+</header>
+
+<nav>
+    <a href="#overview">Overview</a>
+    <a href="#setup">Setup</a>
+    <a href="#stock-market">Stock Market</a>
+    <a href="#operating-round">Operating Round</a>
+    <a href="#phases">Phases</a>
+    <a href="#glossary">Glossary</a>
+</nav>
+
+<main>
+    <section id="overview">
+        <h2>Game Overview</h2>
+        <p>Shikoku 1889 is part of the 18xx system, where players take on the role of investors aiming to become the wealthiest by starting, operating, and investing in railroad Corporations[cite: 1390, 1391].</p>
+                <h3>Goal of the Game</h3>
+        <p>The winner is the player with the highest net worth, which includes cash, share values, and Private Company face values[cite: 2550, 2551].</p>
+    </section>
+
+    <section id="setup">
+        <h2>Setup</h2>
+        <p>Distribute starting capital based on the number of players[cite: 1733, 1734]:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Players</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Starting Capital</td>
+                    <td>¥420</td>
+                    <td>¥420</td>
+                    <td>¥420</td>
+                    <td>¥390</td>
+                    <td>¥390</td>
+                </tr>
+                <tr>
+                    <td>Certificate Limit</td>
+                    <td>25</td>
+                    <td>19</td>
+                    <td>14</td>
+                    <td>12</td>
+                    <td>11</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="stock-market">
+        <h2>The Stock Market</h2>
+        <p>The Stock Market tracks Corporation values. Stock tokens move based on corporate actions[cite: 1449, 1450]:</p>
+        <ul>
+            <li><strong>Up:</strong> Moves up one space if the Corporation is "Sold Out" at the end of a Stock Round[cite: 1931, 1933].</li>
+            <li><strong>Down:</strong> Moves down one space for each share sold[cite: 1935].</li>
+            <li><strong>Right:</strong> Moves right if the Corporation pays dividends[cite: 1937].</li>
+            <li><strong>Left:</strong> Moves left if the Corporation withholds earnings[cite: 1940].</li>
+        </ul>
+            </section>
+
+    <section id="operating-round">
+        <h2>Operating Round (OR)</h2>
+        <p>Corporations act in descending stock price order[cite: 2236]. Steps include:</p>
+        <ol>
+            <li><strong>Lay/Upgrade Track:</strong> Place yellow, green, or brown tiles[cite: 2237, 2249].</li>
+            <li><strong>Place Station Token:</strong> Establish presence for ¥40[cite: 2238, 2320].</li>
+            <li><strong>Run Trains:</strong> Connect cities and towns to earn revenue[cite: 2239, 2328].</li>
+            <li><strong>Distribute Earnings:</strong> Pay dividends to shareholders or withhold to the treasury[cite: 2240, 2374].</li>
+            <li><strong>Purchase Trains:</strong> Upgrade technology before older models "rust"[cite: 2240, 2451].</li>
+        </ol>
+    </section>
+
+    <section id="phases">
+        <h2>Game Phases</h2>
+        <p>Phases are triggered when the first train of a new rank is purchased[cite: 1543, 2494].</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Phase</th>
+                    <th>Train Rusted</th>
+                    <th>Train Limit</th>
+                    <th>ORs per SR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Phase 2</td>
+                    <td>None</td>
+                    <td>4</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Phase 4</td>
+                    <td>2-Trains</td>
+                    <td>3</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Phase 6</td>
+                    <td>3-Trains</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Phase D</td>
+                    <td>4-Trains</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="glossary">
+        <h2>Glossary</h2>
+        <div class="glossary-item">
+            <span class="glossary-term">Float:</span> When 50% of shares are sold, the Corporation receives its capital and can operate[cite: 2717].
+        </div>
+        <div class="glossary-item">
+            <span class="glossary-term">Rust:</span> When newer trains make older models obsolete, removing them from play[cite: 2732].
+        </div>
+        <div class="glossary-item">
+            <span class="glossary-term">Sold Out:</span> When 100% of a Corporation's shares are held by players[cite: 2733].
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Design: Yasutaka Ikeda | © Grand Trunk Games LLC 2022 [cite: 2560, 2565]</p>
+</footer>
+
+</body>
+</html>
