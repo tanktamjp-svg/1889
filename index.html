@@ -3,87 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHIKOKU 1889 - 官方規則完整數位版</title>
+    <title>SHIKOKU 1889 - 數位規則全書 v1.0 (和風版)</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         :root {
-            --primary-teal: #004b50;
-            --accent-red: #a83232;
-            --bg-parchment: #fdfcf0;
-            --text-main: #2c3e50;
-            --border-gold: #c5a059;
-            --white: #ffffff;
+            --ai-indigo: #002f55; /* 藍染深靛 */
+            --shu-vermillion: #b22d15; /* 朱紅 */
+            --washi-cream: #f4f1e6; /* 和紙色 */
+            --text-charcoal: #333333; /* 墨色 */
+            --gold-accent: #c5a059; /* 金箔 */
             --sidebar-width: 280px;
         }
 
         * { box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
-            font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-            background-color: var(--bg-parchment);
-            color: var(--text-main);
+            font-family: 'Shippori Mincho', 'Noto Serif TC', serif;
+            background-color: var(--washi-cream);
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png'); /* 紙張質感 */
+            color: var(--text-charcoal);
             margin: 0;
             display: flex;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
-        /* 側邊導航 */
+        /* 側邊導航 (和風直欄) */
         aside {
             width: var(--sidebar-width);
-            background-color: var(--primary-teal);
-            color: var(--white);
+            background-color: var(--ai-indigo);
+            color: #fff;
             height: 100vh;
             position: fixed;
             padding: 2rem 1rem;
             overflow-y: auto;
-            border-right: 4px solid var(--border-gold);
+            border-right: 3px solid var(--gold-accent);
+            box-shadow: 4px 0 10px rgba(0,0,0,0.3);
             z-index: 1001;
         }
 
-        aside h1 { font-size: 1.4rem; text-align: center; border-bottom: 1px solid var(--border-gold); padding-bottom: 1rem; margin-bottom: 2rem; }
-        aside nav a { display: block; color: var(--white); text-decoration: none; padding: 0.8rem 1rem; border-radius: 4px; transition: 0.3s; margin-bottom: 0.5rem; font-size: 0.9rem; }
-        aside nav a:hover { background-color: rgba(255,255,255,0.1); color: var(--border-gold); }
+        aside h1 { 
+            font-size: 1.6rem; 
+            text-align: center; 
+            border-bottom: 2px double var(--gold-accent); 
+            padding-bottom: 1rem; 
+            margin-bottom: 2rem;
+            letter-spacing: 4px;
+        }
 
-        /* 主要內容 */
+        aside nav a { 
+            display: block; 
+            color: #d1d1d1; 
+            text-decoration: none; 
+            padding: 0.8rem 1rem; 
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            transition: 0.3s; 
+            font-size: 0.95rem; 
+        }
+
+        aside nav a:hover { color: var(--gold-accent); background: rgba(255,255,255,0.05); }
+
+        /* 主要內容區 */
         main {
             margin-left: var(--sidebar-width);
             flex: 1;
             padding: 3rem;
-            max-width: 1200px;
+            max-width: 1100px;
         }
 
-        section { margin-bottom: 4rem; scroll-margin-top: 2rem; }
-        .header-banner { background-color: var(--primary-teal); color: white; padding: 2.5rem; border-radius: 8px; margin-bottom: 3rem; border-bottom: 6px solid var(--border-gold); }
-        h2 { color: var(--primary-teal); border-bottom: 2px solid var(--border-gold); padding-bottom: 0.5rem; margin-top: 0; }
-        h3 { color: var(--accent-red); margin-top: 2rem; }
-        .cite { font-size: 0.75rem; color: #999; vertical-align: super; margin-left: 2px; }
+        section { 
+            background: rgba(255,255,255,0.6); 
+            padding: 2.5rem; 
+            margin-bottom: 3rem; 
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+        }
 
-        /* 樣式組件 */
-        .table-container { overflow-x: auto; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-radius: 8px; }
+        .header-banner { 
+            background-color: var(--ai-indigo); 
+            color: white; 
+            padding: 3rem; 
+            border-radius: 4px; 
+            margin-bottom: 4rem; 
+            border-bottom: 8px solid var(--shu-vermillion);
+            text-align: center;
+        }
+
+        h2 { 
+            color: var(--ai-indigo); 
+            border-left: 8px solid var(--shu-vermillion); 
+            padding-left: 1rem; 
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        h3 { color: var(--shu-vermillion); margin-top: 2rem; font-size: 1.4rem; }
+
+        .cite { font-size: 0.75rem; color: #888; vertical-align: super; margin-left: 2px; }
+
+        /* 表格樣式 (和式簡潔) */
+        .table-container { margin: 1.5rem 0; overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; background: white; }
-        th, td { padding: 12px 15px; border: 1px solid #eee; text-align: center; }
-        th { background-color: var(--primary-teal); color: white; }
-        
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .card { background: white; border: 1px solid #ddd; border-top: 6px solid var(--accent-red); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        th, td { padding: 12px; border: 1px solid #ddd; text-align: center; }
+        th { background-color: var(--ai-indigo); color: white; }
+        tr:nth-child(even) { background-color: #f9f6ef; }
 
-        .example-box { background-color: #eef7f7; border-left: 6px solid var(--primary-teal); padding: 2rem; border-radius: 0 8px 8px 0; margin-top: 1rem; }
-        .step-tag { background: var(--primary-teal); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 5px; }
+        /* 卡片設計 (類似和式屏風/繪馬) */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card { 
+            background: white; 
+            border: 2px solid var(--ai-indigo); 
+            border-top: 10px solid var(--shu-vermillion); 
+            padding: 1.5rem; 
+            box-shadow: 5px 5px 0px var(--gold-accent);
+        }
+
+        /* 範例流程 (浮世繪色塊感) */
+        .example-box { 
+            background-color: #e8f0f2; 
+            border: 2px dashed var(--ai-indigo); 
+            padding: 2rem; 
+            margin-top: 1rem;
+            position: relative;
+        }
 
         /* 計算器 */
-        .calc-container { background: #fff; padding: 2rem; border-radius: 12px; border: 2px solid var(--border-gold); }
+        .calc-container { 
+            background: #fff; 
+            padding: 2rem; 
+            border: 3px double var(--ai-indigo); 
+            border-radius: 0;
+        }
         .calc-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
-        .calc-row label { flex: 1; font-weight: bold; min-width: 200px; }
-        .calc-row input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 110px; }
-        .total-box { font-size: 2rem; font-weight: bold; color: var(--accent-red); text-align: center; margin-top: 2rem; border-top: 2px dashed #ddd; padding-top: 1.5rem; }
+        .calc-row input { 
+            background: #fdfcf0; 
+            border: 1px solid var(--ai-indigo); 
+            padding: 8px; 
+            width: 100px;
+            font-family: inherit;
+        }
+        .total-box { 
+            font-size: 2.2rem; 
+            color: var(--shu-vermillion); 
+            text-align: center; 
+            padding: 1.5rem;
+            border-top: 2px solid var(--gold-accent);
+        }
 
-        footer { margin-top: 5rem; padding: 2rem; text-align: center; font-size: 0.85rem; color: #777; border-top: 1px solid #ddd; }
+        footer { text-align: center; padding: 4rem; color: #888; border-top: 1px solid #ddd; }
 
         @media (max-width: 900px) {
             body { flex-direction: column; }
-            aside { width: 100%; height: auto; position: relative; border-right: none; }
+            aside { width: 100%; height: auto; position: relative; }
             main { margin-left: 0; padding: 1.5rem; }
         }
     </style>
@@ -91,199 +164,170 @@
 <body>
 
 <aside>
-    <h1>SHIKOKU 1889<br><span style="font-size: 0.8rem; font-weight: normal;">明治二十二年・四國</span></h1>
+    <h1>明治二十二年<br>四國</h1>
     <nav>
-        <a href="#intro"><i class="fas fa-info-circle"></i> 遊戲簡介</a>
-        <a href="#setup"><i class="fas fa-cog"></i> 初始設置 (含4人規則)</a>
-        <a href="#privates"><i class="fas fa-id-card"></i> 私人公司全集</a>
-        <a href="#market"><i class="fas fa-chart-line"></i> 股票市場與區域</a>
-        <a href="#flow"><i class="fas fa-sync"></i> 4人遊戲流程範例</a>
-        <a href="#operating"><i class="fas fa-train"></i> 營運規則詳解</a>
-        <a href="#calculator"><i class="fas fa-calculator"></i> 互動淨資產計算器</a>
-        <a href="#end"><i class="fas fa-flag-checkered"></i> 遊戲結束與結算</a>
+        <a href="#intro">一、 遊戲解說</a>
+        <a href="#setup">二、 初始設置</a>
+        <a href="#privates">三、 私人公司全集</a>
+        <a href="#stock">四、 股票回合 (SR)</a>
+        <a href="#flow">五、 四人遊玩範例</a>
+        <a href="#operating">六、 營運回合 (OR)</a>
+        <a href="#calculator">七、 淨資產計算器</a>
+        <a href="#end">八、 結算勝負</a>
     </nav>
 </aside>
 
 <main>
     <section id="intro">
         <div class="header-banner">
-            <h2>遊戲概覽</h2>
-            <p>《明治二十二年・四國》是一款關於日本四國鐵路投資與營運的策略遊戲 [cite: 16]。玩家作為投資者，透過經營鐵路公司來累積個人淨資產 [cite: 21]。</p>
+            <h2>SHIKOKU 1889 <br> v1.0 數位規則書</h2>
+            <p>日本四國鐵道開發與股票投資</p>
         </div>
-        <p>本遊戲無隨機元素，重點在於玩家間的互動、市場競爭與技術升級的時機掌控 [cite: 14]。</p>
+        <p>18xx 系統提供互動性高且隨機元素極少的競爭體驗 [cite: 14]。玩家作為投資者，旨在於遊戲結束時成為最富有的人 [cite: 20]。</p>
+        
     </section>
 
     <section id="setup">
-        <h2>初始設置與 4 人規則</h2>
-        <p>銀行準備 ¥7,000 的資金（移除所有 ¥500 鈔票）[cite: 362]。針對 4 人遊戲的特殊設置如下：</p>
+        <h2>二、 初始設置</h2>
+        <p>銀行準備 ¥7,000 的資金 [cite: 362]。針對 4 人遊戲的數值如下： [cite: 360, 364, 841]</p>
         <div class="table-container">
             <table>
-                <thead>
-                    <tr><th>設置項目</th><th>4 人遊戲數值</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>起始資金</td><td>每位玩家 <strong>¥420</strong> </td></tr>
-                    <tr><td>持股憑證上限 (Certificate Limit)</td><td><strong>14 張</strong> </td></tr>
-                    <tr><td>使用私人公司</td><td><strong>A 至 G</strong> 全數使用 [cite: 360]</td></tr>
-                    <tr><td>優先權標記 (Priority Deal)</td><td>隨機分配給一位玩家 [cite: 366]</td></tr>
-                </tbody>
+                <tr><th>玩家人數</th><th>起始資金</th><th>憑證持有上限</th><th>使用私人公司</th></tr>
+                <tr><td>4 人</td><td>每位 <strong>¥420</strong></td><td><strong>14 張</strong></td><td><strong>A 至 G</strong> 全數使用</td></tr>
             </table>
         </div>
     </section>
 
     <section id="privates">
-        <h2>私人公司全集 (A-G)</h2>
-        <p>私人公司在每個營運回合 (OR) 開始時支付固定收益 [cite: 645]。以下為全部公司能力：</p>
+        <h2>三、 私人公司全集 (A-G)</h2>
+        <p>私人公司在每個營運回合開始時支付固定收益給其擁有者 [cite: 645]。以下為其詳細能力： </p>
         <div class="card-grid">
             <div class="card">
-                <h4>A. 高松電氣軌道 (Takamatsu)</h4>
-                <p>面值: ¥20 | 收益: ¥5 [cite: 1257, 1258]。<br>特殊：除非由公司擁有或已關閉，否則高松格不可升級 [cite: 1259]。</p>
+                <h4>A. 高松電氣軌道</h4>
+                <p>面值: ¥20 | 收益: ¥5 [cite: 1257-1258]。<br>除非此公司由鐵路公司擁有或已關閉，否則高松 (Takamatsu) 地圖格不得升級 [cite: 1259]。</p>
             </div>
             <div class="card">
                 <h4>B. 三菱郵船 (Mitsubishi Ferry)</h4>
-                <p>面值: ¥30 | 收益: ¥5 [cite: 1264, 1265]。<br>特殊：擁有玩家可於沿海城鎮（中村、南國、牟岐、小松島）放置港口板塊 (#437) [cite: 1266]。</p>
+                <p>面值: ¥30 | 收益: ¥5 [cite: 1264-1265]。<br>擁有玩家可於沿海城鎮（中村、南國、牟岐、小松島）之一放置港口板塊 (#437) [cite: 1266]。</p>
             </div>
             <div class="card">
                 <h4>C. 愛媛鐵道 (Ehime Railroad)</h4>
-                <p>面值: ¥40 | 收益: ¥10 [cite: 1269]。<br>特殊：大洲 (Ozu) 在此公司關閉前不可升級。售予公司時，該玩家可立即升級大洲 [cite: 1270, 1271]。</p>
+                <p>面值: ¥40 | 收益: ¥10 [cite: 1269]。<br>大洲 (Ozu) 在此公司關閉前不得升級 [cite: 1270]。售予鐵路公司時，賣方玩家可立即升級大洲 [cite: 1271]。</p>
             </div>
             <div class="card">
-                <h4>D. 住友別子礦山鐵道 (Sumitomo)</h4>
-                <p>面值: ¥50 | 收益: ¥15 [cite: 1275, 1276]。<br>特殊：若由公司持有，該公司可忽略山脈地形建設費用 [cite: 1278]。</p>
+                <h4>D. 住友別子礦山鐵道</h4>
+                <p>面值: ¥50 | 收益: ¥15 [cite: 1275-1276]。<br>若由鐵路公司持有，該公司可忽略山脈地形之建設費用 [cite: 1278]。</p>
             </div>
             <div class="card">
                 <h4>E. 道後鐵道 (Dogo Railway)</h4>
-                <p>面值: ¥60 | 收益: ¥15 [cite: 1281, 1282]。<br>特殊：玩家可關閉此公司以換取 10% 伊予鐵道 (Iyo) 股份 [cite: 1296]。</p>
+                <p>面值: ¥60 | 收益: ¥15 [cite: 1281-1282]。<br>玩家可關閉此公司以換取伊予鐵道 (Iyo) 的 10% 股份 [cite: 1311]。</p>
             </div>
             <div class="card">
                 <h4>F. 參拜鐵道 (Pilgrimage Railway)</h4>
-                <p>面值: ¥80 | 收益: ¥20 [cite: 1314, 1318]。<br>特殊：無特殊能力 。</p>
+                <p>面值: ¥80 | 收益: ¥20 [cite: 1314-1318]。<br>此公司無特殊能力 [cite: 1316]。</p>
             </div>
             <div class="card">
-                <h4>G. 宇高連絡船 (Uno-Takamatsu Ferry)</h4>
-                <p>面值: ¥150 | 收益: ¥30 [cite: 1317, 1318]。<br>特殊：5 號車出現後不關閉，收益增至 ¥50 [cite: 1320]。遊戲結束為持有者增加 ¥150 淨資產 [cite: 1321]。</p>
+                <h4>G. 宇高連絡船</h4>
+                <p>面值: ¥150 | 收益: ¥30/¥50 [cite: 1317-1319]。<br>5 號車被購買時不關閉，收益增至 ¥50 [cite: 1320]。結束時為持有者增加 ¥150 淨資產 [cite: 1321]。</p>
             </div>
         </div>
     </section>
 
-    <section id="market">
-        <h2>股票市場與區域規則</h2>
-        <div class="card-grid">
-            <div class="card" style="border-top-color: #ffb6c1;">
-                <h4>粉色區域 (Pink)</h4>
-                <p>新啟動公司的起始股價位置 [cite: 552]。</p>
-            </div>
-            <div class="card" style="border-top-color: #ffff00;">
-                <h4>黃色區域 (Yellow)</h4>
-                <p>此區公司的股份<strong>不計入</strong>憑證持有上限 [cite: 553]。</p>
-            </div>
-            <div class="card" style="border-top-color: #ffa500;">
-                <h4>橘色區域 (Orange)</h4>
-                <p>不計入上限，且<strong>不受 60% 持股限制</strong>約束 [cite: 555]。</p>
-            </div>
-        </div>
-        <div class="important-note" style="background:#fff; border:1px solid #ddd; padding:15px; margin-top:20px;">
-            <strong>經營權變更 (Presidency Change)：</strong> 當另一位玩家持股多於現任董事長時，必須立即移交公司章程 [cite: 828, 829]。平手時不觸發移交 [cite: 834]。
-        </div>
+    <section id="stock">
+        <h2>四、 股票回合 (SR)</h2>
+        <p>玩家可採取「賣出股份」再「買入股份」的行動 [cite: 775-777]。每賣出一張股份，該公司股價向下移動一格 [cite: 809]。當公司初始發行區剩餘股份僅剩 50% 時，該公司啟動 [cite: 820]。</p>
+        <p><strong>經營權變更：</strong> 若另一玩家持股超越現任董事長，必須立即移交公司章程 [cite: 828-830]。</p>
     </section>
 
     <section id="flow">
-        <h2>4 人遊戲流程範例 (Sample Flow)</h2>
+        <h2>五、 四人遊玩範例流程</h2>
         <div class="example-box">
-            <p><span class="step-tag">1. 私人拍賣</span> 優先權玩家開始。玩家可直接購買最上方公司或對下方公司加價預約（至少高出 ¥5）[cite: 654, 657]。</p>
-            <p><span class="step-tag">2. 股票回合 (SR)</span> 玩家購買 <strong>伊予鐵道 (Iyo)</strong> 董事長證券（2 股/20%）並設定票價為 ¥100，支付 ¥200 [cite: 784, 786, 792]。當其他玩家共買走 3 股（總計 50%）後，公司啟動 [cite: 796]。</p>
-            <p><span class="step-tag">3. 營運回合 (OR)</span> 公司獲得 ¥1,000 資本（10 倍票價）[cite: 821]。公司執行鋪軌、放置車站、購買火車（例如花費 ¥80 買 2 號車）[cite: 867, 870, 950]。</p>
-            <p><span class="step-tag">4. 盈餘分配</span> 運行火車後，若 Iyo 賺取 ¥60。董事長可發放股利（每股 ¥6），使股價向右移 [cite: 1004, 1009]；或扣留至金庫，使股價向左移 [cite: 1007, 1012]。</p>
+            <p><strong>1. 私人公司拍賣</strong>：4 位玩家各自擁有 ¥420 [cite: 364]。玩家依序出價競逐 A 至 G 公司 [cite: 653]。</p>
+            <p><strong>2. 創立公司</strong>：持有優先權玩家購買<strong>伊予鐵道 (Iyo)</strong> 的董事長證券（20%），設定票價為 ¥100 並支付 ¥200 [cite: 784-792]。</p>
+            <p><strong>3. 啟動與營運</strong>：當市場中 Iyo 的持股總計達 50% 後，公司啟動並獲得金庫資金 ¥1,000 [cite: 821]。Iyo 在松山放置車站並購買 2 號火車 [cite: 1096]。</p>
+            <p><strong>4. 收益發放</strong>：火車運行獲得 ¥60，董事長可發放股利（每股 ¥6）使股價右移 [cite: 1004, 1009]。</p>
         </div>
     </section>
 
     <section id="operating">
-        <h2>營運規則詳解</h2>
-        <h3>地形建設費</h3>
+        <h2>六、 營運回合 (OR)</h2>
+        <h3>地形建設費用 </h3>
         <table>
             <tr><th>地形</th><th>符號</th><th>公司需支付費用</th></tr>
-            <tr><td>山脈 (Mountain)</td><td><i class="fas fa-mountain"></i></td><td>¥80 [cite: 932, 940]</td></tr>
-            <tr><td>河流 (River)</td><td><i class="fas fa-tint"></i></td><td>¥80 [cite: 932]</td></tr>
-            <tr><td>密集城市 (Dense Urban)</td><td><i class="fas fa-city"></i></td><td>¥80 [cite: 932, 946]</td></tr>
+            <tr><td>山脈 (Mountain)</td><td><i class="fas fa-mountain"></i></td><td>¥80</td></tr>
+            <tr><td>河流 (River)</td><td><i class="fas fa-tint"></i></td><td>¥80</td></tr>
+            <tr><td>密集城市 (Dense Urban)</td><td><i class="fas fa-city"></i></td><td>¥80</td></tr>
         </table>
         
-        <h3>技術進展表 (火車與階段)</h3>
+        <h3>階段與火車限制 [cite: 1126]</h3>
         <div class="table-container">
             <table>
-                <thead>
-                    <tr><th>購買首台火車</th><th>火車限制</th><th>淘汰 (Rust)</th><th>SR 後 OR 次數</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>2-Train</td><td>4 台 </td><td>-</td><td>1 次 </td></tr>
-                    <tr><td>4-Train</td><td>3 台 </td><td><strong>淘汰 2-Train</strong> </td><td>2 次 </td></tr>
-                    <tr><td>6-Train</td><td>2 台 </td><td><strong>淘汰 3-Train</strong> </td><td>3 次 </td></tr>
-                    <tr><td>Diesel (D)</td><td>2 台 </td><td><strong>淘汰 4-Train</strong> </td><td>3 次 </td></tr>
-                </tbody>
+                <tr><th>首台火車購買</th><th>持有上限</th><th>淘汰舊火車</th><th>SR 後 OR 數</th></tr>
+                <tr><td>2-Train</td><td>4 台</td><td>-</td><td>1</td></tr>
+                <tr><td>4-Train</td><td>3 台</td><td><strong>淘汰 2-Train</strong></td><td>2</td></tr>
+                <tr><td>6-Train</td><td>2 台</td><td><strong>淘汰 3-Train</strong></td><td>3</td></tr>
+                <tr><td>Diesel (D)</td><td>2 台</td><td><strong>淘汰 4-Train</strong></td><td>3</td></tr>
             </table>
         </div>
     </section>
 
     <section id="calculator">
-        <h2>互動淨資產計算器 (Endgame Calculator)</h2>
+        <h2>七、 互動淨資產計算器</h2>
         <div class="calc-container">
             <div class="calc-row">
                 <label>個人現金 (¥)：</label>
-                <input type="number" id="cash" value="0">
+                <input type="number" id="cashInput" value="0">
             </div>
             <div class="calc-row">
-                <label>公司股票 A (股價 x 股數)：</label>
-                <input type="number" id="p1" placeholder="股價"> × <input type="number" id="s1" placeholder="股數">
+                <label>股票 A (單價 x 股數)：</label>
+                <input type="number" id="price1" placeholder="單價"> × <input type="number" id="shares1" placeholder="股數">
             </div>
             <div class="calc-row">
-                <label>公司股票 B (股價 x 股數)：</label>
-                <input type="number" id="p2" placeholder="股價"> × <input type="number" id="s2" placeholder="股數">
+                <label>股票 B (單價 x 股數)：</label>
+                <input type="number" id="price2" placeholder="單價"> × <input type="number" id="shares2" placeholder="股數">
             </div>
             <div class="calc-row">
-                <label>私人公司面值總和 (¥)：</label>
-                <input type="number" id="privVal" value="0">
+                <label>私人公司面值總額 (¥)：</label>
+                <input type="number" id="privInput" value="0">
             </div>
-            <p style="font-size: 0.8rem; color: #666;">*註：若持有「宇高連絡船 (G)」，請在最後加算其補償額 ¥150 [cite: 1321]。</p>
             <div class="total-box">
-                總計淨資產：<span id="totalNet">¥0</span>
+                總計得分：<span id="finalTotal">¥0</span>
             </div>
         </div>
     </section>
 
     <section id="end">
-        <h2>遊戲結束與結算</h2>
-        <p>遊戲在以下情況發生時結束：<br>1. 銀行 ¥7,000 耗盡 [cite: 1175]。<br>2. 任何玩家宣告破產 [cite: 1173]。</p>
-        <p><strong>最終淨資產公式：</strong> 個人現金 + 股票市值總和 + 私人公司面值 [cite: 1181]。</p>
-        <div class="example-box">
-            玩家 1 持有 6 股 Iyo (¥110) + 3 股 Uwajima (¥90) + 現金 ¥840 + 私人公司 G (¥150)：<br>
-            $$ (6 \times 110) + (3 \times 90) + 840 + 150 = ¥1920 $$ [cite: 1185]
-        </div>
+        <h2>八、 結算勝負</h2>
+        <p>當銀行資金耗盡或有人破產時遊戲結束 [cite: 1171]。勝者為淨資產最高之玩家 [cite: 1180]。</p>
+        <p><strong>淨資產計算公式：</strong> [cite: 1181]</p>
+        $$ \text{Net Worth} = \text{Cash} + \sum (\text{Share Value}) + \text{Private Company Value} $$
     </section>
 
     <footer>
-        <p>© 2026 SHIKOKU 1889 規則書數位化專案 | Yasutaka Ikeda 原作</p>
+        <p>SHIKOKU 1889 | Version 1.0 (Japanese Theme) <br> 依據 Yasutaka Ikeda 原作手冊編製 [cite: 4]</p>
     </footer>
 </main>
 
 <script>
-    // 計算器邏輯
-    const inputFields = document.querySelectorAll('input');
-    inputFields.forEach(field => field.addEventListener('input', calculateTotal));
+    // 計算器互動功能
+    const allInputs = document.querySelectorAll('input');
+    allInputs.forEach(input => input.addEventListener('input', updateScore));
 
-    function calculateTotal() {
-        const cash = parseFloat(document.getElementById('cash').value) || 0;
-        const v1 = (parseFloat(document.getElementById('p1').value) || 0) * (parseFloat(document.getElementById('s1').value) || 0);
-        const v2 = (parseFloat(document.getElementById('p2').value) || 0) * (parseFloat(document.getElementById('s2').value) || 0);
-        const priv = parseFloat(document.getElementById('privVal').value) || 0;
+    function updateScore() {
+        const cash = parseFloat(document.getElementById('cashInput').value) || 0;
+        const v1 = (parseFloat(document.getElementById('price1').value) || 0) * (parseFloat(document.getElementById('shares1').value) || 0);
+        const v2 = (parseFloat(document.getElementById('price2').value) || 0) * (parseFloat(document.getElementById('shares2').value) || 0);
+        const priv = parseFloat(document.getElementById('privInput').value) || 0;
         
-        const result = cash + v1 + v2 + priv;
-        document.getElementById('totalNet').innerText = `¥${result.toLocaleString()}`;
+        const total = cash + v1 + v2 + priv;
+        document.getElementById('finalTotal').innerText = `¥${total.toLocaleString()}`;
     }
 
-    // 導航平滑滾動
-    document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', e => {
+    // 導航滾動
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
         });
     });
 </script>
